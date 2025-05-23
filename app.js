@@ -124,3 +124,34 @@ document.getElementById('previous').addEventListener('click', () => {
     gif.style.opacity = 1;
     updateSongItemPlayIcon();
 });
+
+const muteBtn = document.querySelector('.volume');
+const muteIcon = document.querySelector('.muteIcon');
+
+function toggleMute() {
+    audioElement.muted = !audioElement.muted;
+    if (audioElement.muted) {
+     muteIcon.className = 'fa-solid fa-volume-xmark';
+    }
+    else {
+        muteIcon.className = 'fa-solid fa-volume-high';
+    }
+}
+
+muteBtn.addEventListener('click', toggleMute);
+
+
+
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('i');
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    if(document.body.classList.contains('light-mode')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+});

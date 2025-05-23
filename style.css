@@ -1,3 +1,27 @@
+:root {
+    --bg-main: #181818;
+    --bg-container: #232323;
+    --text-main: #fff;
+    --accent: #1DB954;
+    --songitem-bg: #282828;
+    --container-bg-img: url('bg.png');
+    --navbar-bg: #333;
+    --navbar-text: #b3b3b3;
+    --nav-main: white;
+}
+
+body.light-mode {
+    --bg-main: #ffffff;
+    --bg-container: #ededed;
+    --text-main: #000000;
+    --accent: #FF2D55;
+    --songitem-bg: #f2f2f2;
+    --navbar-bg: #f9f9f9;
+    --navbar-text: #FF2D55;
+    --nav-main: #000000;
+    --container-bg-img: url('bg\ 2.png');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +29,7 @@
 }
 
 body {
-    background-color: #181818;
+    background-color: var(--bg-main);
 }
 
 nav ul {
@@ -13,8 +37,8 @@ nav ul {
     display: flex;
     align-items: center;
     height: 65px;
-    background-color: #333;
-    color: #b3b3b3;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
 }
 
 .brand img {
@@ -30,9 +54,13 @@ nav ul li {
 
 nav ul li:hover {
     scale: 1.04;
-    color: white;
+    color: var(--nav-main);
     transition: all 0.05s ease-in-out;
     cursor: pointer;
+}
+
+nav ul li:active {
+    transform: scale(0.9);
 }
 
 .brand {
@@ -40,11 +68,16 @@ nav ul li:hover {
     align-items: center;
     font-weight: bold;
     font-size: 1.3rem;
-    color: white;
+   color: var(--nav-main);
+}
+
+.logo {
+    margin-right: 10px;
+    color: var(--accent);
 }
 
 .brand:hover {
-    color: white;
+    color: var(--nav-main);
     font-size: 1.3rem;
     transition: none;
     scale: none;
@@ -52,31 +85,35 @@ nav ul li:hover {
 
 h1 {
     font-weight: 600;
+    color: white;
 }
 
 .container {
     min-height: 68vh;
-    background-color: #232323;
-    color: white;
+    background-color: var(--bg-container);
+    color: var(--text-main);
     display: flex;
     width: 70%;
     margin: 23px auto;
     border-radius: 10px;
     padding: 20px;
-    background-image: url('bg.png');
+    background-image: var(--container-bg-img);
     background-repeat: no-repeat;
     background-size: cover;
+    white-space: nowrap;      
+    overflow: hidden;         
+    text-overflow: ellipsis;  
 }
 
 .bottom {
     position: sticky;
     height: 90px;
-    background-color: #232323;
+    background-color: var(--bg-container);
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--text-main);
     flex-direction: column;
 }
 
@@ -86,14 +123,14 @@ h1 {
 
 .icons i {
     cursor: pointer;
-    color: #1DB954;
+    color: var(--accent);
 }
 
 #myProgressBar {
     width: 80vw;
     text-align: center;
     cursor: pointer;
-    accent-color: #1DB954;
+    accent-color: var(--accent);
 }
 
 .songItemContainer {
@@ -103,9 +140,9 @@ h1 {
 .songItem {
     height: 32px;
     display: flex;
-    background-color: #282828;
+    background-color: var(--songitem-bg);
     width: 75.8%;
-    color: #fff;
+    color: var(--text-main);
     margin: 14.9px 0;
     justify-content: space-between;
     align-items: center;
@@ -124,7 +161,7 @@ h1 {
 
 .timeStamps i {
     cursor: pointer;
-    color: #1DB954;
+    color: var(--accent);
 }
 
 .songInfo {
@@ -137,6 +174,18 @@ h1 {
     transition: opacity 0.4s ease-in-out;
 }
 
+.volume {
+    position: absolute;
+    right: 10vw;
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+
 .songName:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -147,6 +196,14 @@ h1 {
     transform: scale(0.9);
 }
 
+
+#themeToggle {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
 
 @media (max-width: 600px) {
     .container {
@@ -173,7 +230,7 @@ h1 {
     }
 
     .brand:hover {
-        color: white;
+        color: var(--nav-main);
         font-size: 1.2rem;
         transition: none;
         scale: none;
