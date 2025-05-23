@@ -257,4 +257,8 @@ h1 {
         height: auto;
         padding: 10px 0;
     }
+
+    .volume {
+        margin-bottom: 30px;
+    }
 }
