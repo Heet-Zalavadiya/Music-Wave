@@ -153,18 +153,18 @@ h1 {
         width: 95%;
         min-height: 50vh;
         padding: 10px;
-        font-size: 0.95rem;
+        font-size: 0.6rem;
         background-size: cover;
     }
 
     nav ul {
         flex-direction: column;
         height: auto;
-        padding: 10px 0;
+        padding: 8px 0;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 8px 0;
         font-size: 1rem;
     }
 
@@ -180,8 +180,8 @@ h1 {
     }
 
     .songItem {
-        width: 75%;
-        font-size: 0.85rem;
+        width: 95%;
+        font-size: 0.70rem;
         margin: 10px 0;
     }
 
