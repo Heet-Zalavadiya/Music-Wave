@@ -176,7 +176,7 @@ h1 {
 
 .volume {
     position: absolute;
-    right: 10vw;
+    right: 9.5vw;
     background: transparent;
     border: none;
     color: var(--accent);
@@ -185,6 +185,15 @@ h1 {
     font-size: 1.6rem;
 }
 
+#volumeBar {
+    accent-color: var(--accent);
+    position: absolute;
+    margin-top: 25px;
+    right: 13vw;
+    cursor: pointer;
+    width: 50px;
+    transform: rotate(-90deg);
+}
 
 .songName:hover {
     text-decoration: underline;
@@ -260,5 +269,12 @@ h1 {
 
     .volume {
         margin-bottom: 30px;
+        right: 11vw;
+    }
+
+    #volumeBar {
+        margin-top: 0px;
+        right: 0;
+        width: 50px;
     }
 }

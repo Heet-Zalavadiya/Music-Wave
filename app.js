@@ -140,7 +140,15 @@ function toggleMute() {
 
 muteBtn.addEventListener('click', toggleMute);
 
-
+const volumeBar = document.getElementById('volumeBar');
+volumeBar.addEventListener('input', () => {
+    audioElement.volume = volumeBar.value / 100;
+    if(audioElement.volume === 0) {
+        muteIcon.className = 'fa-solid fa-volume-xmark';
+    } else {
+        muteIcon.className = 'fa-solid fa-volume-high';
+    }
+});
 
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('i');
